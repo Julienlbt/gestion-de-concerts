@@ -1,0 +1,7 @@
+{
+  "name": "liste-concert",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
