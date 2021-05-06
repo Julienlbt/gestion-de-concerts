@@ -69,4 +69,11 @@ export class ConcertService {
     this.concertTab.splice(posi,1);
     this.persist();
   }
+
+  public upDateConcert(){
+    
+    this.persist();
+  }
+
+  
 }

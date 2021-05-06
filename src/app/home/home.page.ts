@@ -1,6 +1,7 @@
+import { ConcertService } from './../services/concert.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
-import { ConcertService } from '../services/concert.service';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +10,7 @@ import { ConcertService } from '../services/concert.service';
 })
 export class HomePage implements OnInit {
 
-  constructor(public formConcert: ConcertService, private alertCtrl: AlertController) {}
+  constructor(public formConcert: ConcertService, private alertCtrl: AlertController, private router: Router) {}
 
   public concertTab = [];
 
@@ -29,7 +30,11 @@ export class HomePage implements OnInit {
         }
       ]
     });
-    alert.present();
-    
+    alert.present();  
+  }
+
+  public upDateOneConcert(posi){
+    this.formConcert.input = this.concertTab[posi]
+    this.router.navigateByUrl('/update');
   }
 }
